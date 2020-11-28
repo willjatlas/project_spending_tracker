@@ -2,5 +2,5 @@ class Tag:
 
     def __init__(self, tag_type, id = None):
         self.tag_type = tag_type
-        self.tag_colour = ["red", "orange", "green"]
         self.tag_id = id
+    
