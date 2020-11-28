@@ -6,3 +6,16 @@ class User:
         self.email = email
         self.wallet = wallet
         self.id = id
+
+    def get_full_name_string(self):
+        """ Returns the user whole name via string concatenation"""
+        return f"{self.first_name} {self.last_name}"
+
+    def charge_wallet(self, amount):
+        """ Charges the user's wallet by the given amount """
+        self.wallet -= amount
+
+    def add_to_wallet(self, amount):
+        """ Add to the users wallet the give amount """ 
+        self.wallet += amount 
+    
