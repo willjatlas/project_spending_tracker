@@ -19,14 +19,14 @@ CREATE TABLE tags (
 CREATE TABLE merchants (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
-    decription TEXT
+    description TEXT
 );
 
 CREATE TABLE transactions (
     id SERIAL PRIMARY KEY,
     user_id INT REFERENCES users(id),
-    date DATE,
-    time TIME,
+    date VARCHAR(255),
+    time VARCHAR(255),
     merchant_id INT REFERENCES merchants(id),
     amount FLOAT,
     tag_id INT REFERENCES tags(id)

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Transactions</h1>
+
+<div>
+{% for transaction in transactions %}
+   <p>{{transaction.date}} : {{transaction.time}} : {{transaction.merchant.name}} : {{transaction.amount}} : {{transaction.tag.tag_type}}</p>
+{% endfor %}
+</div>
+
+{% endblock %}
