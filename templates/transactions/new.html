@@ -4,7 +4,7 @@
 
 <form action="/transactions" method="POST">
     <div class="user-dropdown">
-        <select name="user_id" id="user">
+        <select name="user_id" id="user" required>
             <option value=""> Select User </option>
             {% for user in users %}
             <option value="{{ user.id }}">
@@ -14,16 +14,24 @@
         </select>
     </div>
     <div id="date-input">
-        <input type="text" placeholder="dd/mm/yy">
+        <input type="text" 
+               name="date"
+               id="date" 
+               placeholder="dd/mm/yy" 
+               required>
     </div>
     <div id="time-input">
-        <input type="text" placeholder="hh:mm">
+        <input type="text" 
+               id="time" 
+               name="time"
+               placeholder="hh:mm" 
+               required>
     </div>
     <div class="merchant=-dropdown">
-        <select name="merchant_id" id="merchant">
+        <select name="merchant_id" id="merchant" required>
             <option value=""> Select Merchant </option>
             {% for merchant in merchants %}
-            <option value="{{ merchant_id }}">
+            <option value="{{ merchant.id }}">
                 {{merchant.name}}
             </option>
             {% endfor %}
@@ -31,13 +39,17 @@
     </div>
     <div id="amount-input">
         <label for="amount">Amount: </label>
-        <input type="number" step=0.01 min=0>
+        <input type="number" 
+               id="amount"
+               name="amount"
+               step=0.01 min=0 
+               required>
     </div>
     <div class="tag-dropdown">
-        <select name="merchant_id" id="merchant">
+        <select name="tag_id" id="tag" required>
             <option value=""> Select Tag </option>
             {% for tag in tags %}
-            <option value="{{ tag_id }}">
+            <option value="{{ tag.id }}">
                 {{tag.tag_type}}
             </option>
             {% endfor %}

@@ -18,10 +18,30 @@ def transactions():
 # New - shows the form page for entering a new transaction to hte db. 
 @transactions_blueprint.route("/transactions/new")
 def new_transaction():
-    users = user_repository.select_all()
-    tags = tag_repository.select_all()
-    merchants = merchant_repository.select_all()
+    users     =  user_repository.select_all()
+    tags      =  tag_repository.select_all()
+    merchants =  merchant_repository.select_all()
     return render_template("transactions/new.html", users = users, tags = tags, merchants = merchants)
+
+# Create - adds the from entry to the db.
+@transactions_blueprint.route("/transactions", methods=["POST"])
+def create_transaction():
+    user_id     =  request.form["user_id"]
+    date        =  request.form["date"]
+    time        =  request.form["time"]
+    merchant_id =  request.form["merchant_id"]
+    amount      =  float(request.form["amount"])
+    tag_id      =  request.form["tag_id"]
+    user        =  user_repository.select(user_id)
+    merchant    =  merchant_repository.select(merchant_id)
+    tag         =  tag_repository.select(tag_id)
+    transaction =  Transaction(user, date, time, merchant, amount, tag)
+    transaction_repository.save(transaction)
+    return redirect("/transactions")
+
+
+
+
 
 
 
