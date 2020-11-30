@@ -7,15 +7,30 @@
     <title>ST - {{title}}</title>
 </head>
 <body>
-    <div id="nav-container">
-        <nav id="nav-bar">
-            <a href="/">Home</a>
-            <a href="/transactions/new">New Transaction</a>
-            <a href="/transactions">View Transactions</a>
-        </nav>
-    </div>
-    {% block content %}
+    <header>
+        <div id="nav-container">
+            <nav id="nav-bar">
+                <a href="/">Home</a>
+                <a href="/transactions/new">New Transaction</a>
+                <a href="/transactions">View Transactions</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        {% block content %}
 
-    {% endblock %}
+        {% endblock %}
+    </main>
+    <footer>
+        <div id=foot-nav-container>
+            <nav id="foot-nav-bar">
+                <a href="/tags">View Tags</a>
+                <a href="/merchants">View Merchants</a>
+            </nav>
+        </div>
+    </footer>
+    
+
+
 </body>
 </html>

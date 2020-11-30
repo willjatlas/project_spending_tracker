@@ -1,10 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-    {% for tag in tags %}
-        <ul>
-            <li>{{tag.id}} : {{tag.tag_type}}</li>
-        </ul>
-    {% endfor %}
-
+<h3>Tags: </h3>
+    <ul id="tags-list">
+        {% for tag in tags %}
+            <li>{{tag.tag_type}}</li>
+            <a class="delete-button" href="/tags/{{tag.id}}/delete"> Delete </a>
+            <a class="edit-button" href="/tags/{{tag.id}}/edit"> Edit </a>
+        {% endfor %}
+    </ul>
+<a id="add-tag-link" href="/tags/new"> Add New Tag </a>
 {% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>Add New Tag:
+    <form action="/tags" method="POST">
+        <div class="tag-input">
+            <input type="text"
+                   name="tag_type"
+                   id="tag_type"
+                   placeholder="Enter tag type..."
+                   required>
+        </div>
+        <button type="submit"> Add Tag </button>
+    </form>
+</h3>
+
+{% endblock %}
