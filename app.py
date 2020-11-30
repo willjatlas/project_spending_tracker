@@ -6,6 +6,7 @@ app = Flask(__name__)
 
 app.register_blueprint(transactions_blueprint)
 
+
 @app.route('/')
 def home():
     return render_template('home.html')

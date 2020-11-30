@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="/transactions" method="POST">
+    <div class="user-dropdown">
+        <select name="user_id" id="user">
+            <option value=""> Select User </option>
+            {% for user in users %}
+            <option value="{{ user.id }}">
+                {{user.get_full_name_string()}}
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+    <div id="date-input">
+        <input type="text" placeholder="dd/mm/yy">
+    </div>
+    <div id="time-input">
+        <input type="text" placeholder="hh:mm">
+    </div>
+    <div class="merchant=-dropdown">
+        <select name="merchant_id" id="merchant">
+            <option value=""> Select Merchant </option>
+            {% for merchant in merchants %}
+            <option value="{{ merchant_id }}">
+                {{merchant.name}}
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+    <div id="amount-input">
+        <label for="amount">Amount: </label>
+        <input type="number" step=0.01 min=0>
+    </div>
+    <div class="tag-dropdown">
+        <select name="merchant_id" id="merchant">
+            <option value=""> Select Tag </option>
+            {% for tag in tags %}
+            <option value="{{ tag_id }}">
+                {{tag.tag_type}}
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+    <button type="submit"> Add Transaction </button>
+</form>
+
+{% endblock %}

@@ -5,7 +5,7 @@ class Transaction:
         self.date = date
         self.time = time
         self.merchant = merchant
-        self.amount = amount
+        self.amount = format(amount, '.2f')
         self.tag = tag
         self.id = id
 
