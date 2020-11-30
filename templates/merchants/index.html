@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>Merchants: </h3>
+    <div id="merchants-view-container">
+        <ul id="merchants-list">
+            {% for merchant in merchants %}
+                <li>{{merchant.name}} : {{merchant.description}}</li>
+                <a class="delete-button" href="/merchants/{{merchant.id}}/delete"> Delete </a>
+                <a class="edit-button" href="/merchants/{{merchant.id}}/edit"> Edit </a>
+            {% endfor %}
+        </ul>
+    </div> 
+<a id="add-merchant-link" href="/merchants/new"> Add New Merchant </a>
+{% endblock %}

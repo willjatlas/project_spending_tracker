@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>Add Merchant:
+    <form action="/merchants" method="POST">
+        <div class="merchant-input">
+            <input type="text"
+                   name="name"
+                   id="name"
+                   placeholder="Enter merchant name..."
+                   required>
+            <textarea name="description" 
+                      id="description" 
+                      cols="30" rows="10"
+                      required>Edit merchant description...
+            </textarea>
+        </div>
+        <button type="submit"> Add Merchant </button>
+    </form>
+</h3>
+
+{% endblock %}

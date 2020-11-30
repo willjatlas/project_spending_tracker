@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>Editing: {{merchant.name}}</h3>
+
+<div id="form-contain">
+    <form action="/merchants/{{merchant.id}}" method="POST">
+        <input type="text"
+                   name="name"
+                   id="name"
+                   placeholder="Edit {{merchant.name}}..."
+                   required>
+        <textarea name="description" 
+                  id="description" 
+                  cols="30" rows="10"
+                  required>{{merchant.description}}</textarea>
+        <button type="submit"> Update </button>
+    </form>
+</div>
+
+{% endblock %}

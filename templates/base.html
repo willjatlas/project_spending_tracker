@@ -3,29 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/style.css') }}">
     <title>ST - {{title}}</title>
 </head>
 <body>
     <header>
         <div id="nav-container">
             <nav id="nav-bar">
-                <a href="/">Home</a>
-                <a href="/transactions/new">New Transaction</a>
-                <a href="/transactions">View Transactions</a>
+                <a class="nav-links" href="/">Home</a>
+                <a class="nav-links" href="/transactions/new">New Transaction</a>
+                <a class="nav-links" href="/transactions">View Transactions</a>
+                <h2>Spending Tracker</h2>
             </nav>
         </div>
     </header>
+    
     <main>
         {% block content %}
 
         {% endblock %}
     </main>
+
     <footer>
-        <div id=foot-nav-container>
+        <div id="foot-nav-container">
             <nav id="foot-nav-bar">
-                <a href="/tags">View Tags</a>
-                <a href="/merchants">View Merchants</a>
+                <h2>Spending Tracker</h2>
+                <a class="nav-links" href="/tags">View Tags</a>
+                <a class="nav-links" href="/merchants">View Merchants</a>
             </nav>
         </div>
     </footer>

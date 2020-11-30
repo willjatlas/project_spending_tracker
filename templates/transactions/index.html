@@ -6,7 +6,7 @@
 
 <div>
 {% for transaction in transactions %}
-   <p>{{transaction.date}} : {{transaction.time}} : {{transaction.merchant.name}} : {{transaction.amount}} : {{transaction.tag.tag_type}}</p>
+   <p>{{transaction.date}} : {{transaction.time}} : {{transaction.merchant.name}} : £{{transaction.amount}} : {{transaction.tag.tag_type}}</p>
 {% endfor %}
 </div>
 <h4>Total spent is: {{total_amount}}</h4>
