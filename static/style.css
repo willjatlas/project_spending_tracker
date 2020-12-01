@@ -13,20 +13,25 @@ h2{
     margin-left: 3px;
     margin-top: 10px;
     margin-bottom: 10px;
-    padding: 2px;
+    margin-right: 3px;
+    padding: 5px;
     border-style: groove;
     border-radius: 3px;
-    border-width: 1px;
-    border-color: rgb(238, 108, 77);
-    color: rgb(224, 251, 252)
+    border-width: 2px;
+    border-color: rgb(224, 251, 252);
+    color: rgb(61, 90, 128);
+    text-shadow: 1px 1px 0px rgb(224, 251, 252);
 }
 
+h3{
+    margin: 0;
+}
 #nav-container{
-    background-color: rgb(61, 90, 128);
+    background-color: rgb(238, 108, 77);
     border-style: groove;
     border-radius: 3px;
     border-width: 1px;
-    border-color: rgb(238, 108, 77);
+    border-color: rgb(224, 251, 252);
 }
 
 #nav-bar{
@@ -36,18 +41,19 @@ h2{
     align-content: space-around;
 }
 
-.nav-links{
-    margin: 3px;
-}
-
 main{
+    padding:10px;
     background-color: rgb(224, 251, 252);
     justify-self: center;
     margin: 5%;
 }
 
 #foot-nav-container{
-    background-color: rgb(61, 90, 128);
+    background-color: rgb(238, 108, 77);
+    border-style: groove;
+    border-radius: 3px;
+    border-width: 1px;
+    border-color: rgb(224, 251, 252);
 }
 
 #foot-nav-bar{
@@ -57,18 +63,47 @@ main{
 }
 
 .nav-links{
-    font-size: medium; 
+    margin: 3px;
+    font-size: medium;
+    font-weight: bold;
+    background-color: rgb(152, 193, 217);
     align-self: center;
-    color: rgb(224, 251, 252);
+    color: rgb(61, 90, 128);
     border-style: groove;
     border-radius: 3px;
-    border-width: 1px;
-    border-color: rgb(238, 108, 77);
+    border-width: 2px;
+    border-color: rgb(224, 251, 252);
     padding: 5px;
     text-decoration: none;
+}
+
+.nav-links:hover{
+    background-color: rgb(41, 50, 65);
+    color: rgb(238, 108, 77);
+    border-color: rgb(224, 251, 252)
 }
 
 footer{
     justify-self: center;
     margin: 5%;
+}
+
+#transaction-headings{
+    display: flex;
+}
+
+h4{
+    flex-grow: 1;
+    flex-basis: 20%;
+    text-align: left;
+}
+
+#transactions-display-container{
+    display: flex;
+}
+
+.transaction-info{
+    flex-grow: 1;
+    flex-basis: 20%;
+    text-align: left;
 }
