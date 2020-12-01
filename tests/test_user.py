@@ -26,3 +26,6 @@ class TestUser(unittest.TestCase):
     def test_user_can_add_funds(self):
         self.user2.add_to_wallet(14.20)
         self.assertEqual(264.20, self.user2.wallet)
+
+    def test_user_can_afford(self):
+        self.assertTrue(self.user2.can_affort(100))

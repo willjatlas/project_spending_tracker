@@ -4,7 +4,7 @@ class User:
         self.first_name = first_name
         self.last_name = last_name
         self.email = email
-        self.wallet = format(wallet, '.2f')
+        self.wallet = wallet
         self.id = id
 
     def get_full_name_string(self):
@@ -12,6 +12,7 @@ class User:
         return f"{self.first_name} {self.last_name}"
 
     def charge_wallet(self, amount):
+        print(self.wallet)
         """ Charges the user's wallet by the given amount """
         self.wallet -= amount
 
