@@ -12,17 +12,19 @@ transactions_blueprint = Blueprint("transactions", __name__)
 @transactions_blueprint.route("/transactions")
 def transactions():
     transactions = transaction_repository.select_all()
+    users = user_repository.select_all()
     total_amount = 0.00
     for transaction in transactions:
         total_amount += float(transaction.amount)
     return render_template("transactions/index.html", transactions = transactions, 
-                            total_amount = total_amount)
+                            users= users, total_amount = total_amount)
 
 # Index user transactions. 
-@transactions_blueprint.route("/transactions/<user_id>")
-def user_transactions(user_id):
-    transactions = transaction_repository.select_by_user(user_id)
+@transactions_blueprint.route("/transactions/by_user", methods=["POST"])
+def user_transactions():
+    user_id = request.form["user_id"]
     user = user_repository.select(user_id)
+    transactions = transaction_repository.select_by_user(user_id)
     total_amount = 0.00
     for transaction in transactions:
         total_amount += float(transaction.amount)
