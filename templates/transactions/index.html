@@ -20,7 +20,7 @@
    </div>
 {% endfor %}
 </content>
-<h4>Total spent: {{total_amount}}</h4>
+<h4>Total spent: £{{total_amount}}</h4>
 
 <form action="/transactions/by_user" method="POST">
    <select name="user_id" id="user" requiredç>
@@ -36,7 +36,7 @@
    <select name="tag_id" id="tag" requiredç>
       <option value=""> Select Tag </option>
       {% for tag in tags %}
-      <option value="{{ tag.id }}"> {{tag.tag_type}} </option>
+      <option value="{{ tag.id }}"> {{ tag.tag_type }} </option>
       {% endfor %}
    </select>
    <button type="submit"> Search </button>
