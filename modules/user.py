@@ -20,7 +20,7 @@ class User:
         """ Add to the users wallet the give amount """ 
         self.wallet += amount 
 
-    def can_affort(self, amount):
+    def can_afford(self, amount):
         if self.wallet - amount >= 0:
             return True
         else:

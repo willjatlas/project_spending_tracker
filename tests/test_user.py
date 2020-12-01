@@ -28,7 +28,7 @@ class TestUser(unittest.TestCase):
         self.assertEqual(264.20, self.user2.wallet)
 
     def test_user_can_afford(self):
-        self.assertTrue(self.user2.can_affort(100.00))
+        self.assertTrue(self.user2.can_afford(100.00))
     
     def test_user_can_not_afford(self):
-        self.assertFalse(self.user2.can_affort(300.00))
+        self.assertFalse(self.user2.can_afford(300.00))
