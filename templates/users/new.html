@@ -2,5 +2,38 @@
 
 {% block content %}
 
+<form action="/users" method="POST">
+    <div class="first-name-input">
+        <input type="text"
+               name="first_name"
+               id="first_name"
+               placeholder="First Name"
+               required>
+    </div>
+    <div class="last-name-input">
+        <input type="text"
+               name="last_name"
+               id="last_name"
+               placeholder="Last Name"
+               required>
+    </div>
+    <div class="email-input">
+        <input type="text"
+               name="email"
+               id="email"
+               placeholder="Email Address"
+               required>
+    </div>
+    <div id="first-name-input">
+        <label for="wallet"> Starting Budget </label>
+        <input type="number"
+               name="wallet"
+               id="wallet"
+               required>
+    </div>
+    <button type="submit"> Add User </button>
+
+
+</form>
 
 {% endblock %}

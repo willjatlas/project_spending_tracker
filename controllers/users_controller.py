@@ -19,7 +19,13 @@ def new_user():
 # Create
 @users_blueprint.route("/users", methods=["POST"])
 def create_user():
-    pass
+    first_name = request.form["first_name"]
+    last_name  = request.form["last_name"]
+    email      = request.form["email"]
+    wallet     = float(request.form["wallet"])
+    user       = User(first_name, last_name, email, format(wallet, ".2f"))
+    user_repository.save(user)
+    return redirect("/users")
 
 # Delete
 @users_blueprint.route("/users/<id>/delete")
