@@ -9,7 +9,9 @@
         Laborum maiores minima reiciendis commodi sed sequi voluptatibus vel, doloribus eaque sunt fugiat debitis!
     </p>
 </article>
-<img id="home-img" src="{{ url_for('static', filename='/laughing_with_money.jpg') }}" 
-        alt="Just a girl laughing at how much money she has saved." height="300px" width="400px">
+<div id="img-container">
+    <img src="{{ url_for('static', filename='/laughing_with_money.jpg') }}" 
+         alt="Just a girl laughing at how much money she has saved." height="300px" width="400px">
+</div>
 
 {% endblock %}

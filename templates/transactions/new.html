@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<form action="/transactions" method="POST">
-    <div class="user-dropdown">
+<h3>Input New Transaction: </h3>
+<form id="new-transaction-form" action="/transactions" method="POST">
+    <div class="new-inputs">
         <select name="user_id" id="user" required>
             <option value=""> Select User </option>
             {% for user in users %}
@@ -13,21 +13,21 @@
             {% endfor %}
         </select>
     </div>
-    <div id="date-input">
+    <div class="new-inputs">
         <input type="date" 
                name="date"
                id="date" 
                placeholder="dd/mm/yy" 
                required>
     </div>
-    <div id="time-input">
+    <div class="new-inputs">
         <input type="time" 
                id="time" 
                name="time"
                placeholder="hh:mm" 
                required>
     </div>
-    <div class="merchant=-dropdown">
+    <div class="new-inputs">
         <select name="merchant_id" id="merchant" required>
             <option value=""> Select Merchant </option>
             {% for merchant in merchants %}
@@ -37,7 +37,7 @@
             {% endfor %}
         </select>
     </div>
-    <div id="amount-input">
+    <div class="new-inputs">
         <label for="amount">Amount: </label>
         <input type="number" 
                id="amount"
@@ -45,7 +45,7 @@
                step=0.01 min=0 
                required>
     </div>
-    <div class="tag-dropdown">
+    <div class="new-inputs">
         <select name="tag_id" id="tag" required>
             <option value=""> Select Tag </option>
             {% for tag in tags %}

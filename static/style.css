@@ -6,7 +6,7 @@ body{
 
 header{
     justify-self: center;
-    margin: 5%;
+    margin: 2%;
 }
 
 h2{
@@ -45,7 +45,7 @@ main{
     padding:10px;
     background-color: rgb(224, 251, 252);
     justify-self: center;
-    margin: 5%;
+    margin: 2%;
 }
 
 #foot-nav-container{
@@ -85,7 +85,7 @@ main{
 
 footer{
     justify-self: center;
-    margin: 5%;
+    margin: 2%;
 }
 
 #transaction-headings{
@@ -108,3 +108,12 @@ h4{
     text-align: left;
 }
 
+#img-container{
+    display: flex;
+    justify-content: center;
+    align-content: space-around;
+}
+
+.new-inputs{
+    margin: 3px;
+}
