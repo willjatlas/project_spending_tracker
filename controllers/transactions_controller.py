@@ -17,7 +17,7 @@ def transactions():
     for transaction in transactions:
         total_amount += float(transaction.amount)
     return render_template("transactions/index.html", transactions = transactions, 
-                            users= users, total_amount = total_amount)
+                            users = users, total_amount = total_amount)
 
 # Index user transactions. 
 @transactions_blueprint.route("/transactions/by_user", methods=["POST"])

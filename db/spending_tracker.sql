@@ -25,8 +25,8 @@ CREATE TABLE merchants (
 CREATE TABLE transactions (
     id SERIAL PRIMARY KEY,
     user_id INT REFERENCES users(id),
-    date VARCHAR(255),
-    time VARCHAR(255),
+    date DATE,
+    time TIME,
     merchant_id INT REFERENCES merchants(id),
     amount FLOAT,
     tag_id INT REFERENCES tags(id)
