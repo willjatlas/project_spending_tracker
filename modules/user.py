@@ -4,7 +4,7 @@ class User:
         self.first_name = first_name
         self.last_name = last_name
         self.email = email
-        self.wallet = wallet
+        self.wallet = format(wallet, '.2f')
         self.id = id
 
     def get_full_name_string(self):

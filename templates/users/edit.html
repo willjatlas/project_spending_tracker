@@ -1,6 +1,43 @@
 {% extends "base.html" %}
 
 {% block content %}
+<h3>Editing: {{user.get_full_name_string()}}</h3>
+<form action="/users/{{user.id}}" method="POST">
+    <div class="first-name-input">
+        <input type="text"
+               value="{{user.first_name}}"
+               name="first_name"
+               id="first_name"
+               placeholder="First Name"
+               required>
+    </div>
+    <div class="last-name-input">
+        <input type="text"
+               value="{{user.last_name}}"
+               name="last_name"
+               id="last_name"
+               placeholder="Last Name"
+               required>
+    </div>
+    <div class="email-input">
+        <input type="text"
+               value="{{user.email}}"
+               name="email"
+               id="email"
+               placeholder="Email Address"
+               required>
+    </div>
+    <div id="first-name-input">
+        <label for="wallet"> Budget: </label>
+        <input type="number"
+               value="{{user.wallet}}"
+               name="wallet"
+               id="wallet"
+               step=0.01 min=0 
+               required>
+    </div>
+    <button type="submit"> Update </button>
 
 
+</form>
 {% endblock %}
