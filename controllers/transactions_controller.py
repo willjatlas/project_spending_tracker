@@ -15,8 +15,19 @@ def transactions():
     total_amount = 0.00
     for transaction in transactions:
         total_amount += float(transaction.amount)
-    return render_template("transactions/index.html", transactions = transactions, total_amount = total_amount)
+    return render_template("transactions/index.html", transactions = transactions, 
+                            total_amount = total_amount)
 
+# Index user transactions. 
+@transactions_blueprint.route("/transactions/<user_id>")
+def user_transactions(user_id):
+    transactions = transaction_repository.select_by_user(user_id)
+    user = user_repository.select(user_id)
+    total_amount = 0.00
+    for transaction in transactions:
+        total_amount += float(transaction.amount)
+    return render_template("transactions/user_index.html", transactions = transactions,
+                            user = user , total_amount = format(total_amount, '.2f'))
 
 # New - shows the form page for entering a new transaction to hte db. 
 @transactions_blueprint.route("/transactions/new")
