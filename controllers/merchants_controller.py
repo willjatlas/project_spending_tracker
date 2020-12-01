@@ -19,9 +19,9 @@ def new_merchant():
 # Create
 @merchants_blueprint.route("/merchants", methods=["POST"])
 def create_merchant():
-    name = request.form["name"]
-    description = request.form["description"]
-    merchant = Merchant(name, description)
+    name        =  request.form["name"]
+    description =  request.form["description"]
+    merchant    =  Merchant(name, description)
     merchant_repository.save(merchant)
     return redirect("/merchants")
 
@@ -40,9 +40,9 @@ def edit(id):
 # Update
 @merchants_blueprint.route("/merchants/<id>", methods=["POST"])
 def update_merchant(id):
-    name = request.form["name"]
-    description = request.form["description"]
-    merchant = Merchant(name, description, id)
+    name        =  request.form["name"]
+    description =  request.form["description"]
+    merchant    =  Merchant(name, description, id)
     merchant_repository.update(merchant)
     return redirect("/merchants")
 

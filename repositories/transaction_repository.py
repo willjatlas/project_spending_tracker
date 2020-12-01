@@ -32,7 +32,7 @@ def select_by_user(id):
     values = [id]
     results = run_sql(sql, values)
     for result in results:
-        user = user_repository.select(id)
+        user = user_repository.select(result["user_id"])
         merchant = merchant_repository.select(result["merchant_id"])
         tag = tag_repository.select(result["tag_id"])
         transaction = Transaction(user, result["date"], result["time"], merchant,

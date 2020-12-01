@@ -42,11 +42,11 @@ def edit(id):
 # Update
 @users_blueprint.route("/users/<id>", methods=["POST"])
 def update_user(id):
-    first_name = request.form["first_name"]
-    last_name  = request.form["last_name"]
-    email      = request.form["email"]
-    wallet     = float(request.form["wallet"])
-    user       = User(first_name, last_name, email, wallet, id)
+    first_name =  request.form["first_name"]
+    last_name  =  request.form["last_name"]
+    email      =  request.form["email"]
+    wallet     =  float(request.form["wallet"])
+    user       =  User(first_name, last_name, email, wallet, id)
     user_repository.update(user)
     return redirect("/users")
 

@@ -11,9 +11,9 @@ transactions_blueprint = Blueprint("transactions", __name__)
 # Index - shows all transactions from the db.
 @transactions_blueprint.route("/transactions")
 def transactions():
-    transactions = transaction_repository.select_all()
-    users = user_repository.select_all()
-    total_amount = 0.00
+    transactions =  transaction_repository.select_all()
+    users        =  user_repository.select_all()
+    total_amount =  0.00
     for transaction in transactions:
         total_amount += float(transaction.amount)
     return render_template("transactions/index.html", transactions = transactions, 
@@ -22,10 +22,10 @@ def transactions():
 # Index user transactions. 
 @transactions_blueprint.route("/transactions/by_user", methods=["POST"])
 def user_transactions():
-    user_id = request.form["user_id"]
-    user = user_repository.select(user_id)
-    transactions = transaction_repository.select_by_user(user_id)
-    total_amount = 0.00
+    user_id      =  request.form["user_id"]
+    user         =  user_repository.select(user_id)
+    transactions =  transaction_repository.select_by_user(user_id)
+    total_amount =  0.00
     for transaction in transactions:
         total_amount += float(transaction.amount)
     return render_template("transactions/user_index.html", transactions = transactions,
@@ -37,7 +37,8 @@ def new_transaction():
     users     =  user_repository.select_all()
     tags      =  tag_repository.select_all()
     merchants =  merchant_repository.select_all()
-    return render_template("transactions/new.html", users = users, tags = tags, merchants = merchants)
+    return render_template("transactions/new.html", users = users, tags = tags,
+                            merchants = merchants)
 
 # Create - adds the from entry to the db.
 @transactions_blueprint.route("/transactions", methods=["POST"])
