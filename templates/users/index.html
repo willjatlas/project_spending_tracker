@@ -7,7 +7,7 @@
         {% for user in users %}
             <li>{{user.get_full_name_string()}}</li>
             <li>{{user.email}}</li>
-            <li>Budget = £{{user.wallet}}</li>
+            <li>Budget = £{{"%.2f"|format(user.wallet)}}</li>
             <a class="delete-button" href="/users/{{user.id}}/delete"> Delete </a>
             <a class="edit-button" href="/users/{{user.id}}/edit"> Edit </a>
         {% endfor %}

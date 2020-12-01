@@ -15,7 +15,7 @@
       <div class="transaction-info">{{transaction.date}}</div>
       <div class="transaction-info">{{transaction.time}}</div>
       <div class="transaction-info">{{transaction.merchant.name}}</div>
-      <div class="transaction-info">£{{transaction.amount}}</div>
+      <div class="transaction-info">£{{"%.2f"|format(transaction.amount)}}</div>
       <div class="transaction-info">{{transaction.tag.tag_type}}</div>
    </div>
 {% endfor %}

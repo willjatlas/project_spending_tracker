@@ -9,12 +9,13 @@ merchants_blueprint = Blueprint("merchants", __name__)
 @merchants_blueprint.route("/merchants")
 def merchants():
     merchants = merchant_repository.select_all()
-    return render_template("merchants/index.html", merchants = merchants)
+    return render_template("merchants/index.html", merchants = merchants,
+                            title = "Merchants")
 
 # New
 @merchants_blueprint.route("/merchants/new")
 def new_merchant():
-    return render_template("merchants/new.html")
+    return render_template("merchants/new.html", title = "New Merchant")
 
 # Create
 @merchants_blueprint.route("/merchants", methods=["POST"])
@@ -35,7 +36,8 @@ def delete(id):
 @merchants_blueprint.route("/merchants/<id>/edit")
 def edit(id):
     merchant = merchant_repository.select(id)
-    return render_template("merchants/edit.html", merchant = merchant)
+    return render_template("merchants/edit.html", merchant = merchant, 
+                            title = "Edit Merchant")
 
 # Update
 @merchants_blueprint.route("/merchants/<id>", methods=["POST"])

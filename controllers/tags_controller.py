@@ -14,7 +14,7 @@ def tags():
 # New
 @tags_blueprint.route("/tags/new")
 def new_tag():
-    return render_template("tags/new.html")
+    return render_template("tags/new.html", title = "New Tag")
 
 # Create
 @tags_blueprint.route("/tags", methods=["POST"])
@@ -34,7 +34,7 @@ def delete(id):
 @tags_blueprint.route("/tags/<id>/edit")
 def edit(id):
     tag = tag_repository.select(id)
-    return render_template("tags/edit.html", tag = tag)
+    return render_template("tags/edit.html", tag = tag, title = "Edit Tag")
 
 # Update
 @tags_blueprint.route("/tags/<id>", methods=["POST"])

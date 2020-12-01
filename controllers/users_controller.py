@@ -9,12 +9,12 @@ users_blueprint = Blueprint("users", __name__)
 @users_blueprint.route("/users")
 def users():
     users = user_repository.select_all()
-    return render_template("users/index.html", users = users)
+    return render_template("users/index.html", users = users, title = "Users")
 
 # New
 @users_blueprint.route("/users/new")
 def new_user():
-    return render_template("users/new.html")
+    return render_template("users/new.html", title = "New User")
 
 # Create
 @users_blueprint.route("/users", methods=["POST"])
@@ -37,7 +37,7 @@ def delete(id):
 @users_blueprint.route("/users/<id>/edit")
 def edit(id):
     user = user_repository.select(id)
-    return render_template("users/edit.html", user = user)
+    return render_template("users/edit.html", user = user, title = "Edit User")
 
 # Update
 @users_blueprint.route("/users/<id>", methods=["POST"])

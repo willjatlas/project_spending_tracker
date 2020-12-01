@@ -17,7 +17,7 @@ def transactions():
     for transaction in transactions:
         total_amount += float(transaction.amount)
     return render_template("transactions/index.html", transactions = transactions, 
-                            users = users, total_amount = total_amount)
+                            users = users, total_amount = total_amount, title = "Transactions")
 
 # Index user transactions. 
 @transactions_blueprint.route("/transactions/by_user", methods=["POST"])
@@ -29,7 +29,8 @@ def user_transactions():
     for transaction in transactions:
         total_amount += float(transaction.amount)
     return render_template("transactions/user_index.html", transactions = transactions,
-                            user = user , total_amount = format(total_amount, '.2f'))
+                            user = user , total_amount = format(total_amount, '.2f'),
+                            title = "User Transactions")
 
 # New - shows the form page for entering a new transaction to hte db. 
 @transactions_blueprint.route("/transactions/new")
@@ -38,7 +39,7 @@ def new_transaction():
     tags      =  tag_repository.select_all()
     merchants =  merchant_repository.select_all()
     return render_template("transactions/new.html", users = users, tags = tags,
-                            merchants = merchants)
+                            merchants = merchants, title = "New Transaction")
 
 # Create - adds the from entry to the db.
 @transactions_blueprint.route("/transactions", methods=["POST"])
@@ -58,7 +59,7 @@ def create_transaction():
         return redirect("/transactions")
     else:
         error = "I'm sorry, this transaction will put you over your budget."
-        return render_template("/transactions/error.html", error = error)
+        return render_template("/transactions/error.html", error = error, title = "Error")
 
 
 
