@@ -32,6 +32,19 @@ def user_transactions():
                             user = user , total_amount = format(total_amount, '.2f'),
                             title = "User Transactions")
 
+# Index tag transactions. 
+@transactions_blueprint.route("/transactions/by_tag", methods=["POST"])
+def tag_transactions():
+    tag_id       =  request.form["tag_id"]
+    tag          =  tag_repository.select(tag_id)
+    transactions =  transaction_repository.select_by_tag(tag_id)
+    total_amount =  0.00
+    for transaction in transactions:
+        total_amount += float(transaction.amount)
+    return render_template("transactions/tag_index.html", transactions = transactions,
+                            tag = tag , total_amount = format(total_amount, '.2f'),
+                            title = "Tag Transactions")
+
 # New - shows the form page for entering a new transaction to hte db. 
 @transactions_blueprint.route("/transactions/new")
 def new_transaction():

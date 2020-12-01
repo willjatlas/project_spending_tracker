@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3> Viewing {{tag.tag_type}} Transactions: </h3>
+<div id="transaction-headings">
+    <h4>Tag</h4><h4>Date</h4><h4>Time</h4><h4>Merchant</h4><h4>Amount</h4>
+</div>
+<hr>
+<content id="transactions-display">
+{% for transaction in transactions %}
+   <div id="transactions-display-container">
+      <div class="transaction-info">{{transaction.user.get_full_name_string()}}</div>
+      <div class="transaction-info">{{transaction.date}}</div>
+      <div class="transaction-info">{{transaction.time}}</div>
+      <div class="transaction-info">{{transaction.merchant.name}}</div>
+      <div class="transaction-info">£{{"%.2f"|format(transaction.amount)}}</div>
+   </div>
+{% endfor %}
+</content>
+<h4>Total spent: {{total_amount}}</h4>
+
+{% endblock %}

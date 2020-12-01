@@ -32,5 +32,16 @@
    <button type="submit"> Search </button>
 </form>
 
+<form action="/transactions/by_tag" method="POST">
+   <select name="tag_id" id="tag" requiredç>
+      <option value=""> Select Tag </option>
+      {% for tag in tags %}
+      <option value="{{ tag.id }}"> {{tag.tag_type}} </option>
+      {% endfor %}
+   </select>
+   <button type="submit"> Search </button>
+</form>
+
+
 
 {% endblock %}

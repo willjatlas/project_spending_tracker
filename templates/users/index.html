@@ -3,16 +3,17 @@
 {% block content %}
 
 <h3>Users: </h3>
-    <ul id="users-list">
+    <content id="users-list">
         {% for user in users %}
-            <li>{{user.get_full_name_string()}}</li>
-            <li>{{user.email}}</li>
-            <li>Budget = £{{"%.2f"|format(user.wallet)}}</li>
-            <a class="delete-button" href="/users/{{user.id}}/delete"> Delete </a>
+            <div>{{user.get_full_name_string()}}</div>
+            <div>{{user.email}}</div>
+            <div>Budget = £{{"%.2f"|format(user.wallet)}}</div>
+            <a class="delete-button" href="/users/{{user.id}}/delete"> Delete </a>&nbsp;
             <a class="edit-button" href="/users/{{user.id}}/edit"> Edit </a>
+            <hr>
         {% endfor %}
-    </ul>
-<a id="add-user-link" href="/users/new"> Add New User </a>
+    </content>
+<a class="nav-links" href="/users/new"> Add New User </a>
 
 
 {% endblock %}

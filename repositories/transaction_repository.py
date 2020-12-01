@@ -40,6 +40,19 @@ def select_by_user(id):
         transactions.append(transaction)
     return transactions
 
+def select_by_tag(id):
+    transactions = []
+    sql = "SELECT * FROM transactions where tag_id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+    for result in results:
+        user = user_repository.select(result["user_id"])
+        merchant = merchant_repository.select(result["merchant_id"])
+        tag = tag_repository.select(result["tag_id"])
+        transaction = Transaction(user, result["date"], result["time"], merchant,
+                      result["amount"], tag, result["id"] ) 
+        transactions.append(transaction)
+    return transactions
 
 def delete_all():
     sql = "DELETE FROM transactions"

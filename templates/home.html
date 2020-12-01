@@ -2,8 +2,14 @@
 
 {% block content %}
 
-<h4>This is the home page.</h4>
-
-<p>Going forward, would like to add user log in and access permissions.</p>
+<article id="home-content">
+    <h4>This is the home page.</h4>
+    <p>Going forward, would like to add user log in and access permissions!!!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae beatae repudiandae soluta reiciendis! Ad, officia voluptatum? 
+        Laborum maiores minima reiciendis commodi sed sequi voluptatibus vel, doloribus eaque sunt fugiat debitis!
+    </p>
+</article>
+<img id="home-img" src="{{ url_for('static', filename='/laughing_with_money.jpg') }}" 
+        alt="Just a girl laughing at how much money she has saved." height="300px" width="400px">
 
 {% endblock %}
