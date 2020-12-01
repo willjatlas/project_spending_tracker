@@ -52,9 +52,13 @@ def create_transaction():
     user        =  user_repository.select(user_id)
     merchant    =  merchant_repository.select(merchant_id)
     tag         =  tag_repository.select(tag_id)
-    transaction =  Transaction(user, date, time, merchant, amount, tag)
-    transaction_repository.save(transaction)
-    return redirect("/transactions")
+    if user.can_afford(amount) == True:
+        transaction =  Transaction(user, date, time, merchant, amount, tag)
+        transaction_repository.save(transaction)
+        return redirect("/transactions")
+    else:
+        error = "I'm sorry, this transaction will put you over your budget."
+        return render_template("/transactions/error.html", error = error)
 
 
 
