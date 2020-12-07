@@ -1,8 +1,8 @@
 import unittest
-from modules.transaction import Transaction
-from modules.user import User
-from modules.tag import Tag
-from modules.merchant import Merchant
+from models.transaction import Transaction
+from models.user import User
+from models.tag import Tag
+from models.merchant import Merchant
 
 class TestTransaction(unittest.TestCase):
 

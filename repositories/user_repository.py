@@ -1,5 +1,5 @@
 from db.run_sql import run_sql
-from modules.user import User 
+from models.user import User 
 
 def save(user):
     sql = """INSERT INTO users(first_name, last_name, email, wallet)
@@ -25,7 +25,8 @@ def select(id):
     values = [id]
     result = run_sql(sql, values)[0]
     if result is not None:
-        user = User(result["first_name"], result["last_name"], result["email"],
+        user = User(result["first_name"], result["last_name"], 
+                    result["email"],
                result["wallet"], result["id"])
     return user
 
@@ -41,5 +42,6 @@ def delete(id):
 def update(user):
     sql = """UPDATE users SET (first_name, last_name, email,
              wallet) = (%s, %s, %s, %s) WHERE id = %s"""
-    values = [user.first_name, user.last_name, user.email, user.wallet, user.id]
+    values = [user.first_name, user.last_name, user.email,
+              user.wallet, user.id]
     run_sql(sql, values)

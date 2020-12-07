@@ -1,5 +1,5 @@
 from db.run_sql import run_sql
-from modules.transaction import Transaction
+from models.transaction import Transaction
 import repositories.user_repository as user_repository
 import repositories.tag_repository as tag_repository
 import repositories.merchant_repository as merchant_repository 

@@ -1,5 +1,5 @@
 from db.run_sql import run_sql
-from modules.merchant import Merchant
+from models.merchant import Merchant
 
 def save(merchant):
     sql = "INSERT INTO merchants(name, description) VALUES (%s, %s) RETURNING ID"

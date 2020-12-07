@@ -1,5 +1,5 @@
 from db.run_sql import run_sql
-from modules.tag import Tag
+from models.tag import Tag
 
 def save(tag):
     sql = "INSERT INTO tags (tag_type) VALUES (%s) RETURNING ID"

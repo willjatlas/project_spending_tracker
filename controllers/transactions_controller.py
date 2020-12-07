@@ -1,5 +1,5 @@
 from flask import Flask, Blueprint, render_template, redirect, request
-from modules.transaction import Transaction
+from models.transaction import Transaction
 
 import repositories.transaction_repository as transaction_repository
 import repositories.user_repository as user_repository

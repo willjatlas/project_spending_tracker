@@ -1,5 +1,5 @@
 import unittest
-from modules.tag import Tag
+from models.tag import Tag
 
 class TestTag(unittest.TestCase):
 

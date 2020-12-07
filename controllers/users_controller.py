@@ -1,5 +1,5 @@
 from flask import Flask, Blueprint, render_template, redirect, request
-from modules.user import User
+from models.user import User
 
 import repositories.user_repository as user_repository
 

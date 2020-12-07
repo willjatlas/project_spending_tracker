@@ -1,5 +1,5 @@
 from flask import Blueprint, Flask, redirect, render_template, request
-from modules.merchant import Merchant
+from models.merchant import Merchant
 
 import repositories.merchant_repository as merchant_repository
 

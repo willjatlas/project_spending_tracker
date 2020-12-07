@@ -1,5 +1,5 @@
 import unittest
-from modules.merchant import Merchant
+from models.merchant import Merchant
 
 class TestMerchant(unittest.TestCase):
 

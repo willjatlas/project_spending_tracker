@@ -1,5 +1,5 @@
 from flask import Blueprint, Flask, redirect, render_template, request
-from modules.tag import Tag
+from models.tag import Tag
 
 import repositories.tag_repository as tag_repository
 
